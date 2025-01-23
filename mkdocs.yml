@@ -1,7 +1,4 @@
 site_name: COMP423 Course Notes
 theme:
   name: material
-nav:
-  - Home: index.md
-  - Tutorials:
-      - "Go Setup": tutorials/go-setup.md
+
