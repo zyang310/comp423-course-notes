@@ -58,17 +58,28 @@ git init # (1)!
 
 ### **Step 3. Link your Local Repository to GitHub**
 
-(1) Add the GitHub repository as a remote:
+(1) Let's create a README file to commit. In your terminal, run:
+  ```bash
+  echo "# first-go-project" >> README.md
+  git add README.md
+  git commit -m "First commit with README file"
+  ```
+
+(2) Add the GitHub repository as a remote:
 
    ```bash
-   git remote add origin https://github.com/<your-username>/comp423-course-notes.git
+   git remote add origin https://github.com/<your-username>/first-go-project.git
    ```
 
    Replace `<your-username>` with your GitHub username.
 
-(2) Check your default branch name with the subcommand `git branch`. If it's not `main`, rename it to `main` with the following command: `git branch -M main`. Old versions of `git` choose the name `master` for the primary branch, but these days `main` is the standard primary branch name.
+(3) Check your default branch name with the subcommand `git branch`. If it's not `main`, rename it to `main` with the following command: `git branch -M main`. Old versions of `git` choose the name `master` for the primary branch, but these days `main` is the standard primary branch name.
 
-(3) Push your local commits to the GitHub repository:
+  ```bash
+  git branch -M main
+  ```
+
+(4) Push your local commits to the GitHub repository:
 
    ```bash
    git push --set-upstream origin main
@@ -97,7 +108,7 @@ Now paste this into your `devcontainer.json` file:
       "settings": {},
       "extensions": ["golang.go"]
     }
-  },
+  }
 } 
 ```
 
@@ -164,7 +175,7 @@ In your directory, you should see a `main.exe` file appear. This `.exe` file con
 In your terminal, now run this command to the compliled main.exe.
 
 ```bash
-./mian.exe # (1)!
+./main.exe # (1)!
 ```
 
 1. `./` exectutes the program in the currently working directory.
