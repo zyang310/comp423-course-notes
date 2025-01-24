@@ -163,7 +163,7 @@ You should now see `Hello World!` in your terminal.
 !!! question "How does `go run` exactly work?"
     Because **Golang** is a `compiled language`, everytime a program is ran, the program first has to be compliled into machine code (eg. binary). `go run` does both this in succession, both compliling and running after the program is compiled. **The compiled file is not saved** 
 
-Compared to `go run`, `go build` is faster because this command only compiles the program into binary code and does not run it creating a `.exe` file.
+Compared to `go run`, `go build` is faster because this command only compiles the program into binary code creating a `.exe` file and does not run it.
 
 To test it out, go to your terminal (make sure that you are in the `first-go-project` directory) and input this command:
 
