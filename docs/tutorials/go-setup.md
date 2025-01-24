@@ -7,9 +7,9 @@
 
 By completing this tutorial, you will learn:
 
- - something
- - something
- - something
+ - Initialize a new project
+ - Setting up a dev container
+ - Run your first Golang code
 
 ## **Prerequisites**
 
@@ -42,10 +42,41 @@ git init # (1)!
 
 1. Initialize a folder as a new, empty git repository.
 
-### **Step 2:**
+### **Step 2: Create a remote repository on GitHub**
 
-!!! important
-    WIP
+(1) Log in to your GitHub account and navigate to the [Create a New Repository](https://github.com/new){:target="_blank"} page.
+
+(2) Fill in the details as follows:
+
+- **Repository Name:** `first-go-project`
+- **Description:** "My first Go project"
+- **Visibility:** Public
+
+(3) Do not initialize the repository with a README, .gitignore, or license.
+
+(4) Click **Create Repository**.
+
+### **Step 3. Link your Local Repository to GitHub**
+
+(1) Add the GitHub repository as a remote:
+
+   ```bash
+   git remote add origin https://github.com/<your-username>/comp423-course-notes.git
+   ```
+
+   Replace `<your-username>` with your GitHub username.
+
+(2) Check your default branch name with the subcommand `git branch`. If it's not `main`, rename it to `main` with the following command: `git branch -M main`. Old versions of `git` choose the name `master` for the primary branch, but these days `main` is the standard primary branch name.
+
+(3) Push your local commits to the GitHub repository:
+
+   ```bash
+   git push --set-upstream origin main
+   ```
+
+!!! info "Understanding the --set-upstream Flag"
+
+    `git push --set-upstream origin main`: This command pushes the main branch to the remote repository origin. The `--set-upstream` flag sets up the main branch to track the remote branch, meaning future pushes and pulls can be done without specifying the branch name and just writing `git push origin` when working on your local `main` branch. This long flag has a corresponding `-u` short flag.
 
 ## **Part 2. Setting up your Dev Container**
 
@@ -84,7 +115,7 @@ Once your dev container setup completes, close the current terminal tab (trash c
 
 Now everything is set up, we can bring it all to life!
 
-1. In your main directory, create folder to house your new project, maybe name it `first-go`, and in it a new file called `main.go`.
+1. In your main directory, create folder to house your new project, maybe name it `first-go-project` to keep continuity, and in it a new file called `main.go`.
 2. In your `main.go` file, you can now write your first Go code.
 
 ``` Go title="Hello World!"
@@ -104,14 +135,14 @@ func main(){
 
 ### Step 2: Running the code
 
-Because program in Go are packages, we will first have to turn `main.go` into a package!
+Because programs in Go are packages, we will first have to turn `main.go` into a package!
 
-Making sure you are in your `first-go` folder, then in your terminal, run the following command.
+Making sure you are in your `first-go-project` folder, then in your terminal, run the following command.
 
 ```bash
 go mod init main.go
 ```
-Now that you have turned your `main.go` into a package, you can now run it! Again, make sure you are in your `first-go` folder. Now in your terminal, run the following command to run your program.
+Now that you have turned your `main.go` into a package, you can now run it! Again, make sure you are in your `first-go-project` folder. Now in your terminal, run the following command to run your program.
 
 ```bash
 go run main.go
@@ -123,5 +154,25 @@ You should now see `Hello World!` in your terminal.
 
 Compared to `go run`, `go build` is faster because this command only compiles the program into binary code and does not run it creating a `.exe` file.
 
+To test it out, go to your terminal (make sure that you are in the `first-go-project` directory) and input this command:
+
+```bash
+go build main.go
+```
+In your directory, you should see a `main.exe` file appear. This `.exe` file contains the binary conversion/equivalent of the code you wrote in your `main.exe` directory.
+
+In your terminal, now run this command to the compliled main.exe.
+
+```bash
+./mian.exe # (1)!
+```
+
+1. `./` exectutes the program in the currently working directory.
+
+### **Pros and Cons**
+
+The `run` subcommand is very useful in active development, when you want to experiment or test out a new feature. However, this is very slow because you have to recompiled the code everytime you want to run it.  
+
+The `build` subcommand promotes reuseablility, meaning that you can execute the code without having to recompliling it each time, saving time and resources. However the tradeoff, is that the compiled `.exe` file takes up space and it is a hassle having to build and then run it.
 
 
