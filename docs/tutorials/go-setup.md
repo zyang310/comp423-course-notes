@@ -19,7 +19,6 @@ Before we get [into the thick of it](https://www.youtube.com/watch?v=At8v_Yc044Y
 2. **Git Installed:** Git Good by [installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} if you haven't already.
 3. **Visual Studio Code (VS Code):** Download and install this bad-boy [here](https://code.visualstudio.com/){:target="_blank"}.
 4. **Docker Installed:** You need this to run the dev container. [Get Docker here](https://www.docker.com/products/docker-desktop/){:target="_blank"}!
-5. **Install Go:** You got to [GO](https://go.dev/){:target="_blank"} download the language before using it!
 
 ## **Part 1. Project Setup: Initializing your Repository**
 ### **Step 1: Create a Local Directory and Initialize Git**
@@ -29,8 +28,8 @@ Before we get [into the thick of it](https://www.youtube.com/watch?v=At8v_Yc044Y
 (B) Create a new directory for your project.  
 
 ``` bash
-mkdir my-first-go-project 
-cd my-first-go-project 
+mkdir first-go-project 
+cd first-go-project 
 ```
 
 (C) Initialize a new Git Repository
@@ -93,7 +92,7 @@ git init # (1)!
 
 1. In VS Code, open your folder that includes your project.
 2. Install the **Dev Containers** extension for VS Code.
-3. Create a `.devcontainer ` directory in the root of your project with the following file in side of this "hidden configuration directory:  
+3. Create a `.devcontainer ` directory in the root of your project with the following file inside of this "hidden configuration directory:  
 
 ``.devcontainer/devcontainer.json``
 
@@ -126,7 +125,7 @@ Once your dev container setup completes, close the current terminal tab (trash c
 
 Now everything is set up, we can bring it all to life!
 
-1. In your main directory, create folder to house your new project, maybe name it `first-go-project` to keep continuity, and in it a new file called `main.go`.
+1. In your main directory, create folder to house your new project, maybe name it `go-hello-world` to keep continuity, and in it a new file called `main.go`.
 2. In your `main.go` file, you can now write your first Go code.
 
 ``` Go title="Hello World!"
@@ -148,12 +147,17 @@ func main(){
 
 Because programs in Go are packages, we will first have to turn `main.go` into a package!
 
-Making sure you are in your `first-go-project` folder, then in your terminal, run the following command.
+Making sure you are in your `go-hello-world` folder, then in your terminal, run the following command.
 
 ```bash
 go mod init main.go
 ```
-Now that you have turned your `main.go` into a package, you can now run it! Again, make sure you are in your `first-go-project` folder. Now in your terminal, run the following command to run your program.
+Now that you have turned your `main.go` into a package, you can now run it! 
+
+```bash
+cd go-hello-world
+```
+ Now in your terminal, run the following command to run your program.
 
 ```bash
 go run main.go
@@ -163,19 +167,33 @@ You should now see `Hello World!` in your terminal.
 !!! question "How does `go run` exactly work?"
     Because **Golang** is a `compiled language`, everytime a program is ran, the program first has to be compliled into machine code (eg. binary). `go run` does both this in succession, both compliling and running after the program is compiled. **The compiled file is not saved** 
 
-Compared to `go run`, `go build` is faster because this command only compiles the program into binary code creating a `.exe` file and does not run it.
+Compared to `go run`, `go build` is faster because this command only compiles the program into binary code creating a executable object file and does not run it.
 
-To test it out, go to your terminal (make sure that you are in the `first-go-project` directory) and input this command:
+To test it out, go to your terminal and input
+
+```bash
+cd .. # (1)!
+``` 
+
+1. This command move to the parent directory of the current directory
+
+and then input this command:
 
 ```bash
 go build main.go
-```
-In your directory, you should see a `main.exe` file appear. This `.exe` file contains the binary conversion/equivalent of the code you wrote in your `main.exe` directory.
 
-In your terminal, now run this command to the compliled main.exe.
+```
+In your directory, you should see a `main` file appear. This file contains the binary conversion/equivalent of the code you wrote in your `main.go` file.
+
+Move into `go-hello-world` again, 
+```bash
+cd go-hello-world
+```
+
+and after you have done that, in your terminal, now run this command to the compliled main.go
 
 ```bash
-./main.exe # (1)!
+./main # (1)!
 ```
 
 1. `./` exectutes the program in the currently working directory.
