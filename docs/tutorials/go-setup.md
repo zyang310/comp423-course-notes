@@ -7,9 +7,9 @@
 
 By completing this tutorial, you will learn:
 
- - something
- - something
- - something
+ - Initialize a new project
+ - Setting up a dev container
+ - Run your first Golang code
 
 ## **Prerequisites**
 
@@ -104,7 +104,7 @@ func main(){
 
 ### Step 2: Running the code
 
-Because program in Go are packages, we will first have to turn `main.go` into a package!
+Because programs in Go are packages, we will first have to turn `main.go` into a package!
 
 Making sure you are in your `first-go` folder, then in your terminal, run the following command.
 
@@ -123,5 +123,25 @@ You should now see `Hello World!` in your terminal.
 
 Compared to `go run`, `go build` is faster because this command only compiles the program into binary code and does not run it creating a `.exe` file.
 
+To test it out, go to your terminal (make sure that you are in the `first-go` directory) and input this command:
+
+```bash
+go build main.go
+```
+In your directory, you should see a `main.exe` file appear. This `.exe` file contains the binary conversion/equivalent of the code you wrote in your `main.exe` directory.
+
+In your terminal, now run this command to the compliled main.exe.
+
+```bash
+./mian.exe # (1)!
+```
+
+1. `./` exectutes the program in the currently working directory.
+
+### **Pros and Cons**
+
+The `run` subcommand is very useful in active development, when you want to experiment or test out a new feature. However, this is very slow because you have to recompiled the code everytime you want to run it.  
+
+The `build` subcommand promotes reuseablility, meaning that you can execute the code without having to recompliling it each time, saving time and resources. However the tradeoff, is that the compiled `.exe` file takes up space and it is a hassle having to build and then run it.
 
 
