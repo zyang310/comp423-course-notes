@@ -125,16 +125,16 @@ Once your dev container setup completes, close the current terminal tab (trash c
 
 Now everything is set up, we can bring it all to life!
 
-1. In your main directory, create folder to house your new project, maybe name it `go-hello-world` to keep continuity, and in it a new file called `main.go`.
+1. In your main directory, create folder to house your new project, and name it `go-hello-423`  and in it a new file called `main.go`.
 2. In your `main.go` file, you can now write your first Go code.
 
-``` Go title="Hello World!"
+``` Go title="Hello COMP423"
 package main
 
 import "fmt" // (1)!
 
 func main(){
-    fmt.Println("Hello World!")
+    fmt.Println("Hello COMP423!")
 }
 ```
 
@@ -147,7 +147,7 @@ func main(){
 
 Because programs in Go are packages, we will first have to turn `main.go` into a package!
 
-Making sure you are in your `go-hello-world` folder, then in your terminal, run the following command.
+Making sure you are in your `first-go-project` directory, then in your terminal, run the following command.
 
 ```bash
 go mod init main.go
@@ -155,29 +155,23 @@ go mod init main.go
 Now that you have turned your `main.go` into a package, you can now run it! 
 
 ```bash
-cd go-hello-world
+cd go-hello-423
 ```
  Now in your terminal, run the following command to run your program.
 
 ```bash
 go run main.go
 ```
-You should now see `Hello World!` in your terminal.
+You should now see `Hello COMP423!` in your terminal.
 
 !!! question "How does `go run` exactly work?"
     Because **Golang** is a `compiled language`, everytime a program is ran, the program first has to be compliled into machine code (eg. binary). `go run` does both this in succession, both compliling and running after the program is compiled. **The compiled file is not saved** 
 
 Compared to `go run`, `go build` is faster because this command only compiles the program into binary code creating a executable object file and does not run it.
 
-To test it out, go to your terminal and input
+Your current directory should be `first-go-project/go-hello-423`
 
-```bash
-cd .. # (1)!
-``` 
-
-1. This command move to the parent directory of the current directory
-
-and then input this command:
+To see what `go build` do, input this command in your terminal:
 
 ```bash
 go build main.go
@@ -185,12 +179,7 @@ go build main.go
 ```
 In your directory, you should see a `main` file appear. This file contains the binary conversion/equivalent of the code you wrote in your `main.go` file.
 
-Move into `go-hello-world` again, 
-```bash
-cd go-hello-world
-```
-
-and after you have done that, in your terminal, now run this command to the compliled main.go
+In your terminal, run this command to the compliled main.go
 
 ```bash
 ./main # (1)!
