@@ -152,7 +152,8 @@ Making sure you are in your `first-go-project` directory, then in your terminal,
 ```bash
 go mod init main.go
 ```
-!!! note "what does go mod do?
+
+!!! note "what does go mod do?"
     the `go mod init` command is used to initialize a new module in your project. It creates a new `go.mod` file in your current directory. Each Go module is defined by a `go.mod` file that describes the module's properties, including its dependencies on other modules as well as define the module's import path. You can manage your dependencies with other `go mod` commands (e.g., `go mod tidy`, `go get`, etc).
 
 
