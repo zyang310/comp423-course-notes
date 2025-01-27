@@ -145,19 +145,23 @@ func main(){
 
 ### Step 2: Running the code
 
-Because programs in Go are packages, we will first have to turn `main.go` into a package!
+Before we start, lets first initialize our go project.
 
 Making sure you are in your `first-go-project` directory, then in your terminal, run the following command.
 
 ```bash
 go mod init main.go
 ```
-Now that you have turned your `main.go` into a package, you can now run it! 
+!!! note "what does go mod do?
+    the `go mod init` command is used to initialize a new module in your project. It creates a new `go.mod` file in your current directory. Each Go module is defined by a `go.mod` file that describes the module's properties, including its dependencies on other modules as well as define the module's import path. You can manage your dependencies with other `go mod` commands (e.g., `go mod tidy`, `go get`, etc).
+
+
+Now that you have initialize your project to use Go modules. It's time to finally run your code! Let's enter the directory containing `main.go` 
 
 ```bash
 cd go-hello-423
 ```
- Now in your terminal, run the following command to run your program.
+Now in your terminal, run the following command to run your program.
 
 ```bash
 go run main.go
